@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Başlık -->
+    <TextView
+        android:id="@+id/tvVki"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vücut Kitle İndeksi"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- Boy Giriş Alanı -->
+    <EditText
+        android:id="@+id/etBoy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Boy (cm)"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/tvVki"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- Kilo Giriş Alanı -->
+    <EditText
+        android:id="@+id/etKilo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Kilo (kg)"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/etBoy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Cinsiyet Seçimi Başlık -->
+    <TextView
+        android:id="@+id/tvCinsiyetLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cinsiyetinizi Seçin:"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/etKilo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- RadioGroup ile Cinsiyet Seçimi -->
+    <RadioGroup
+        android:id="@+id/rgGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tvCinsiyetLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <RadioButton
+            android:id="@+id/rbKadin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kadın" />
+
+        <RadioButton
+            android:id="@+id/rbErkek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Erkek" />
+    </RadioGroup>
+
+    <!-- Hesapla Butonu -->
+    <Button
+        android:id="@+id/btnHesapla"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hesapla"
+        app:layout_constraintTop_toBottomOf="@id/rgGender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
